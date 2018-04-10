@@ -1,0 +1,14 @@
+---
+- name: create AWS VPC
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+    - ec2
+  tasks:
+    - name: Refresh inventory
+      meta: refresh_inventory
+  roles:
+    - yum
+  roles:
+    - elb
